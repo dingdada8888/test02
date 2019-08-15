@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <div style="height: 50px;background-color: gray" @mouseover="fun1()" >
+        <textarea name="nihao" id="te" cols="30" rows="10" @mouseover.once="fun2($event)"></textarea>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+
+        },
+        methods:{
+            fun2:function (e) {
+                // e.stopPropagation();
+                alert("文本域")
+            },
+            fun1:function () {
+                alert("div")
+            }
+        }
+    });
+</script>

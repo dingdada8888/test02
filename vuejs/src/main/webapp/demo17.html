@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <span v-if="flag">传智播客</span>
+    <span v-show="flag">黑马程序员</span>
+    <span>{{message}}</span>
+    <button v-on:click="fun()">按钮</button>
+</div>
+
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            flag:true,
+            message:213
+        },
+        created:function(){
+            console.log("created执行了")
+        },
+        methods:{
+            fun:function () {
+                this.flag=!this.flag;
+            }
+        }
+    });
+</script>
